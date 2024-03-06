@@ -1,12 +1,9 @@
-<template>
-  <h1 class="flex">menu</h1>
-  <ul class="flex">
-    <li>Home</li>
-    <li>About</li>
-  </ul>
-</template>
-
 <script></script>
+
+<template>
+  <h1>App</h1>
+  <router-view></router-view>
+</template>
 
 <style scoped>
 .flex {
