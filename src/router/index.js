@@ -13,6 +13,11 @@ const router = createRouter({
       name: 'about',
       component: () => import('@/views/AboutPage.vue'),
     },
+    {
+      path: '/Child',
+      name: 'child',
+      component: () => import('@/views/ChildPage.vue'),
+    },
   ],
 });
 export default router;
