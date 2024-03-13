@@ -18,13 +18,9 @@ src/views/AboutPage.vue src/views/HomePage.vue
     </li>
   </ul>
   <ul>
-    <li>親から子にコンポーネント</li>
-    <li>
-      <button @click="toChild">親から子に値渡す</button>
-    </li>
-    <li>
-      <childPg />
-    </li>
+    <li>モーダル</li>
+    <button @click="showChild">モーダル表示</button>
+    <childPg v-if="store.isShow" />
   </ul>
 </template>
 
@@ -39,8 +35,9 @@ const toAbout = () => {
 const increment = () => {
   return store.increment();
 };
-const toChild = () => {
+const showChild = () => {
   // router.push('/Child');
+  store.reverse();
 };
 </script>
 

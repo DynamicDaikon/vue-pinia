@@ -7,6 +7,7 @@ export const useSampleStore = defineStore('sampleStore', () => {
    */
   const count = ref(0);
   const name = ref('');
+  const isShow = ref(false);
   /**
    * getters
    */
@@ -17,6 +18,9 @@ export const useSampleStore = defineStore('sampleStore', () => {
   function increment() {
     count.value++;
   }
+  function reverse() {
+    this.isShow = !this.isShow;
+  }
 
-  return { count, name, doubleCounter, increment };
+  return { count, name, isShow, doubleCounter, increment, reverse };
 });
