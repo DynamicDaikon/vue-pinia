@@ -2,21 +2,11 @@
   <div class="modal">
     I'm child
     <button @click="closeModal">back</button>
-    <!-- <button @click="goHome">home</button> -->
   </div>
   <div id="modal-overlay"></div>
-  <!-- <div>親から受け取った値は{{ props.fromParent }}です</div> -->
 </template>
 
-<script setup>
-// import router from '../router/index';
-import { useSampleStore } from '@/stores/sampleStore';
-const store = useSampleStore();
-
-const closeModal = () => {
-  store.reverse();
-};
-</script>
+<script setup></script>
 
 <style scoped>
 .modal {
