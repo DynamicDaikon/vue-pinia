@@ -3,10 +3,15 @@ import { createRouter, createWebHistory } from 'vue-router';
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+    // {
+    //   path: '/',
+    //   name: 'home',
+    //   component: () => import('@/views/HomePage.vue'),
+    // },
     {
       path: '/',
-      name: 'home',
-      component: () => import('@/views/HomePage.vue'),
+      name: 'todo',
+      component: () => import('@/views/TodoPage.vue'),
     },
     {
       path: '/About',

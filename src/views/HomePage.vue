@@ -1,6 +1,7 @@
 src/views/AboutPage.vue src/views/HomePage.vue
 <template>
-  <div>home page</div>
+  <!-- class属性の指定にはオブジェクト形式で指定可能。配列でも指定可能。 -->
+  <div :class="{ red: true, 'bg-blue': true }">home page</div>
   <!-- <ul style="background-color: aqua">
     <li>
       <button @click="toAbout">Aboutに遷移</button>
@@ -62,4 +63,12 @@ const increment = () => {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.red {
+  color: red;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+</style>
