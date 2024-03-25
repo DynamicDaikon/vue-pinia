@@ -8,18 +8,24 @@ const todoText = ref('');
 const todoList = ref([]);
 
 const addTodo = (text) => {
-  todoList.value.push({
-    id: id++,
-    todoText: text,
-    isComplete: false,
-  });
-  todoText.value = '';
+  if (text !== '') {
+    todoList.value.push({
+      id: id++,
+      todoText: text,
+      isComplete: false,
+    });
+    todoText.value = '';
+  } else {
+    alert('入力フォームに値を入力してください');
+  }
 };
 </script>
 
 <template>
   <h1>My ToDo App</h1>
-  <input type="text" v-model="todoText" /><button @click="addTodo(todoText)">
+  <input type="text" v-model="todoText" placeholder="add todo" /><button
+    @click="addTodo(todoText)"
+  >
     追加
   </button>
   <button>完了済みを削除する</button>
