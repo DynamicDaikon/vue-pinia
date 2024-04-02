@@ -3,10 +3,15 @@ import { ref } from 'vue';
 
 let id = 0;
 
+// todo入力テキスト
 const todoText = ref('');
 // tidoリスト
 const todoList = ref([]);
 
+/**
+ * todo追加ファンクション
+ * @param {*} text
+ */
 const addTodo = (text) => {
   if (text !== '') {
     todoList.value.push({
@@ -20,6 +25,10 @@ const addTodo = (text) => {
   }
 };
 
+/**
+ * todo完了ファンクション
+ * @param {*} todo
+ */
 const toggleTask = (todo) => {
   if (todo.done == '') {
     todo.done = 'todo-done';
@@ -27,13 +36,23 @@ const toggleTask = (todo) => {
     todo.done = '';
   }
 };
+
+/**
+ * 完了済みtodo削除ファンクション
+ */
+const delComplete = () => {
+  const afterArray = todoList.value.filter((todo) => todo.done === '');
+
+  todoList.value = afterArray;
+  console.log('cleaned completed todo');
+};
 </script>
 
 <template>
   <h1>My ToDo App</h1>
   <input type="text" v-model="todoText" placeholder="add todo" />
   <button @click="addTodo(todoText)">追加</button>
-  <button>完了済みを削除する</button>
+  <button @click="delComplete">完了済みを削除する</button>
   <ul>
     <li v-for="todo in todoList" :key="todo.id">
       <input type="checkbox" @click="toggleTask(todo)" />
