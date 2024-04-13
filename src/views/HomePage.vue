@@ -1,12 +1,12 @@
 src/views/AboutPage.vue src/views/HomePage.vue
 <template>
   <!-- class属性の指定にはオブジェクト形式で指定可能。配列でも指定可能。 -->
-  <div :class="{ red: true, 'bg-blue': true }">home page</div>
-  <!-- <ul style="background-color: aqua">
+  <div>home page</div>
+  <ul >
     <li>
       <button @click="toAbout">Aboutに遷移</button>
     </li>
-  </ul> -->
+  </ul>
   <p>count is {{ count }}</p>
   <button @click="increment">methodHandoler</button>
   <br />
