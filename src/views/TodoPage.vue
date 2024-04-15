@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import router from '../router/index';
 
 let id = 0;
 
@@ -7,6 +8,10 @@ let id = 0;
 const todoText = ref('');
 // tidoリスト
 const todoList = ref([]);
+
+const goHome = () => {
+  router.push('/');
+};
 
 /**
  * todo追加ファンクション
@@ -50,6 +55,8 @@ const delComplete = () => {
 
 <template>
   <h1>My ToDo App</h1>
+  <button @click="goHome">Homeに戻る</button>
+  <br />
   <input type="text" v-model="todoText" placeholder="add todo" />
   <button @click="addTodo(todoText)">追加</button>
   <button @click="delComplete">完了済みを削除する</button>

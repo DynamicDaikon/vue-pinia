@@ -5,8 +5,10 @@
 </template>
 
 <script setup>
-import router from '@/router/index.js';
-const toTodo = router.push('/Todo');
+import router from '../router/index';
+const toTodo = () => {
+  router.push('/Todo');
+};
 </script>
 
 <style scoped></style>
